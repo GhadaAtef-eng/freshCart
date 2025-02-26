@@ -69,7 +69,7 @@ export default function ProductDetails() {
     <>
       {details && (
         <div className="mainLayout py-10 items-center w-[80%] mx-auto dark:border-gray-800 dark:border-2 dark:p-10">
-          <div className="md:w-1/4 w-[350px] md:pe-10 py-3 mx-auto ">
+          <div className="md:w-1/4 sm:w-[150px] w-[350px] md:pe-10 py-3 mx-auto ">
             <Slider {...settings}>
               {details?.images.map((src) => (
                 <img src={src} alt="" />
