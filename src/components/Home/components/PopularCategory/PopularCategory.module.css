@@ -1,0 +1,12 @@
+.categoryImg {
+     height: 250px;
+     object-fit: cover;
+     margin-bottom: 1rem;
+     
+}
+.category {
+     height: 350px;
+     object-fit: cover;
+     margin-bottom: 1rem;
+     
+}
