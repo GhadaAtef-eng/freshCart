@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./PopularCategory.module.css";
 import axios from "axios";
 import Slider from "react-slick";
+import { space } from "postcss/lib/list";
 
 export default function PopularCategory() {
   const [categories, setCategories] = useState([]);
@@ -12,8 +13,9 @@ export default function PopularCategory() {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 7,
+    slidesToShow: 3,
     slidesToScroll: 1,
+    space: 1
   };
 
   async function getCategories() {
@@ -40,7 +42,7 @@ export default function PopularCategory() {
           Shop Popular Category{" "}
         </h2>
         <div className=" mb-8">
-          <Slider {...settings}>
+          <Slider  {...settings}>
             {categories.map((category) => (
               <div>
                 <img

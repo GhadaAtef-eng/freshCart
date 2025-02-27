@@ -5,7 +5,7 @@ import axios from "axios";
 import ProductItem from "../../../Shared/ProductItem/ProductItem";
 
 export default function RelatedProduct(props) {
-  let [relatedProduct, setRelatedProduct] = useState([]);
+  const [relatedProduct, setRelatedProduct] = useState([]);
 
   let { categoryId } = props;
   function getProducts() {
@@ -19,6 +19,8 @@ export default function RelatedProduct(props) {
         setRelatedProduct(res);
       })
       .catch((err) => {
+        console.log(err);
+        
       });
   }
   useEffect(() => {

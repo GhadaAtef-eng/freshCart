@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react";
 import { createContext, useState } from "react";
 import { tokenContext } from "./tokenContext";
 import axios from "axios";
+import { toast } from "react-toastify";
 
 export const cartContext = createContext();
 
@@ -131,6 +132,11 @@ export default function CartContextProvider({ children }) {
     );
 
     if (data.status == "success") {
+      toast.success("You ordered Successfully", {
+        theme: "light",
+        type: "success",
+        position: "top-right",
+      });
       getCart();
     }
     return data;

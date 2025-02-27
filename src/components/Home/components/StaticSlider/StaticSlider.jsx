@@ -19,7 +19,7 @@ export default function StaticSlider() {
 
   return (
     <>
-      <div className=" mainLayout sm:pb-96 sm:h-[300px] w-[90%] mx-auto">
+      <div className="pt-10 mainLayout sm:pb-96 sm:h-[300px] w-[90%] mx-auto">
           <div className="w-9/12 ">
             <Slider {...settings}>
               <img className="sm:h-[300px] h-[100px]" src={slide3} />

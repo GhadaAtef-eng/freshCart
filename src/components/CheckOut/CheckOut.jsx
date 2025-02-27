@@ -6,6 +6,7 @@ import * as Yup from "yup";
 import { PacmanLoader } from "react-spinners";
 import { useContext } from "react";
 import { cartContext } from "../../Context/cartContext";
+import { Link } from "react-router-dom";
 
 export default function CheckOut() {
   useEffect(() => {}, []);
@@ -14,7 +15,6 @@ export default function CheckOut() {
   let [isOnline, setIsOnline] = useState(false);
 
   let { cashOnDelivery, onlinePayment } = useContext(cartContext);
-
   const initialValues = {
     details: "",
     phone: "",
@@ -44,15 +44,15 @@ export default function CheckOut() {
       if (isOnline) {
         let x = await onlinePayment(values);
         console.log(x);
-        window.location.href = x.session.url
+        window.location.href = x.session.url;
+        setIsCallingApi(false);
       } else {
         let x = await cashOnDelivery(values);
         console.log(x);
+        setIsCallingApi(false);
       }
       // console.log(values);
-    } catch (error) {
-      setIsCallingApi(false);
-    }
+    } catch (error) {}
   }
 
   return (
@@ -187,12 +187,18 @@ export default function CheckOut() {
             </div>
           </div>
         ) : (
-          <button
-            type="submit"
-            className="block bg-main text-white hover:text-main hover:bg-transparent bg-opacity-80 focus:ring-2 focus:outline-none border-2 border-main focus:ring-main font-medium rounded-lg text-sm  px-5 ml-auto p-2.5 text-center dark:bg-main dark:hover:bg-main dark:focus:ring-main"
-          >
-            Pay Now
-          </button>
+          <div classname="w-auto flex justify-end items-end">
+            <button
+              disabled={isCallingApi}
+              type="submit"
+              className="block bg-main text-white hover:text-main hover:bg-transparent bg-opacity-80 focus:ring-2 focus:outline-none border-2 border-main focus:ring-main font-medium rounded-lg text-sm  px-5 ml-auto p-2.5 text-center dark:bg-main dark:hover:bg-main dark:focus:ring-main"
+            >
+              Pay Now
+            </button>
+            <Link className="text-main" to={"/allOrders"}>
+              See your orders ?
+            </Link>
+          </div>
         )}
       </form>
     </>
