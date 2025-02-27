@@ -168,7 +168,7 @@ export default function Cart() {
         )}
         <Link
           to={"/checkout"}
-          className="inline-block bg-main text-white hover:text-main hover:bg-transparent bg-opacity-80 focus:ring-2 focus:outline-none border-2 border-main focus:ring-main font-medium rounded-lg text-sm  px-5 ml-auto p-2.5 text-center dark:bg-main dark:hover:bg-main dark:focus:ring-main my-5"
+          className="inline-block bg-main text-white hover:text-main hover:bg-transparent bg-opacity-80 focus:ring-2 focus:outline-none border-2 border-main focus:ring-main font-medium rounded-lg text-sm  px-5 ml-auto p-2.5 text-center dark:bg-main dark:hover:bg-transparent dark:focus:ring-main my-5"
         >
           Check Out
         </Link>
