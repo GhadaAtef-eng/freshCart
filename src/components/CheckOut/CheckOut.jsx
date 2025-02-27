@@ -191,7 +191,7 @@ export default function CheckOut() {
             <button
               disabled={isCallingApi}
               type="submit"
-              className="block bg-main text-white hover:text-main hover:bg-transparent bg-opacity-80 focus:ring-2 focus:outline-none border-2 border-main focus:ring-main font-medium rounded-lg text-sm  px-5 ml-auto p-2.5 text-center dark:bg-main dark:hover:bg-main dark:focus:ring-main"
+              className="block bg-main text-white hover:text hover:bg-transparent bg-opacity-80 focus:ring-2 focus:outline-none border-2 border-main focus:ring-main font-medium rounded-lg text-sm  px-5 ml-auto p-2.5 text-center dark:bg-main dark:hover:bg-main dark:focus:ring-main"
             >
               Pay Now
             </button>
