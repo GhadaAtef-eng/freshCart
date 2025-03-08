@@ -145,7 +145,7 @@ export default function CartContextProvider({ children }) {
   // Online payment
   async function onlinePayment(shippingAddress) {
     const { data } = await axios.post(
-      `${ORder_API_URL}/checkout-session/${cartId}?url=http://localhost:5173`,
+      `${ORder_API_URL}/checkout-session/${cartId}?url=https://vercel.com/ghadas-projects-c09885e4`,
       { shippingAddress },
       { headers }
     );
