@@ -145,7 +145,7 @@ export default function CartContextProvider({ children }) {
   // Online payment
   async function onlinePayment(shippingAddress) {
     const { data } = await axios.post(
-      `${ORder_API_URL}/checkout-session/${cartId}?url=https://ghada-e-commerce.vercel.app/allOrders`,
+      `${ORder_API_URL}/checkout-session/${cartId}?url=https://ghada-e-commerce.vercel.app`,
       { shippingAddress },
       { headers }
     );
