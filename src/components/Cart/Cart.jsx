@@ -34,7 +34,7 @@ export default function Cart() {
   return (
     <>
       <div className="pt-[150px] w-[90%] mx-auto ">
-        <div className="flex justify-between">
+        <div className="flex md:flex-row flex-col justify-between">
           <h2 className="text-2xl font-bold mb-1">
             Total Product number:{" "}
             <span className="text-main">{cartDetails?.numOfCartItems}</span>
