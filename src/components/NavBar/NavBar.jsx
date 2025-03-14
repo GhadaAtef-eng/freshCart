@@ -94,65 +94,15 @@ export default function NavBar() {
                         Brands
                       </NavLink>
                     </li>
-                    <div className="flex  items-center gap-3">
-                      <ul className="flex items-center gap-4">
-                        {token ? (
-                          <div className="flex justify-between">
-                            <li>
-                              <NavLink
-                                to={"cart"}
-                                className="block py-2 px-3 text-lg text-main hover:text-white rounded-md md:border-0 md:hover:bg-main  dark:text-white md:dark:hover:text-main dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                              >
-                                <i class="fa-solid fa-cart-plus"></i>{" "}
-                                {numOfCartItems}
-                              </NavLink>
-                            </li>
-                            <li className="block py-2 px-3 text-gray-900 rounded-md md:border-0 md:hover:bg-main  dark:text-white md:dark:hover:text-main dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
-                              <span onClick={logOut}>SignOut</span>
-                            </li>
-                          </div>
-                        ) : (
-                          <>
-                            <li>
-                              <NavLink
-                                className="block py-2 px-3 text-gray-900 rounded-md md:border-0 md:hover:bg-main  dark:text-white md:dark:hover:text-main dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                                to={"register"}
-                              >
-                                Register
-                              </NavLink>
-                            </li>
-                            <li>
-                              <NavLink
-                                className="block py-2 px-3 text-gray-900 rounded-md md:border-0 md:hover:bg-main  dark:text-white md:dark:hover:text-main dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                                to={"login"}
-                              >
-                                Login
-                              </NavLink>
-                            </li>
-                          </>
-                        )}
-                      </ul>
-                    </div>
                   </ul>
                 ) : (
                   ""
                 )}
               </div>
+
+              
             </div>
 
-            {/* //Dark mode */}
-            <button
-              className="p-4"
-              onClick={() => {
-                setDarkMode(!darkMode);
-              }}
-            >
-              {darkMode ? (
-                <i class="dark:text-main fa-solid fa-sun"></i>
-              ) : (
-                <i class="dark:text-main fa-solid fa-moon"></i>
-              )}
-            </button>
             <button
               data-collapse-toggle="navbar-default"
               type="button"
@@ -177,6 +127,59 @@ export default function NavBar() {
                 />
               </svg>
             </button>
+
+            <div className="flex  items-center gap-3">
+          
+              <ul className="flex items-center gap-4">
+                {token ? (
+                  <div className="flex justify-between">
+                    <li>
+                      <NavLink
+                        to={"cart"}
+                        className="block py-2 px-3 text-lg text-main hover:text-white rounded-md md:border-0 md:hover:bg-main  dark:text-white md:dark:hover:text-main dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                      >
+                        <i class="fa-solid fa-cart-plus"></i> {numOfCartItems}
+                      </NavLink>
+                    </li>
+                    <li className="block py-2 px-3 text-gray-900 rounded-md md:border-0 md:hover:bg-main  dark:text-white md:dark:hover:text-main dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+                      <span onClick={logOut}>SignOut</span>
+                    </li>
+                  </div>
+                ) : (
+                  <>
+                    <li>
+                      <NavLink
+                        className="block py-2 px-3 text-gray-900 rounded-md md:border-0 md:hover:bg-main  dark:text-white md:dark:hover:text-main dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                        to={"register"}
+                      >
+                        Register
+                      </NavLink>
+                    </li>
+                    <li>
+                      <NavLink
+                        className="block py-2 px-3 text-gray-900 rounded-md md:border-0 md:hover:bg-main  dark:text-white md:dark:hover:text-main dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                        to={"login"}
+                      >
+                        Login
+                      </NavLink>
+                    </li>
+                  </>
+                )}
+              </ul>
+              {/* //Dark mode */}
+              <button
+                className="p-4"
+                onClick={() => {
+                  setDarkMode(!darkMode);
+                }}
+              >
+                {darkMode ? (
+                  <i class="dark:text-main fa-solid fa-sun"></i>
+                ) : (
+                  <i class="dark:text-main fa-solid fa-moon"></i>
+                )}
+              </button>
+            </div>
           </div>
         </nav>
       </div>
