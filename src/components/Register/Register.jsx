@@ -19,9 +19,14 @@ export default function Register() {
       .min(3, "Min legnth is 3")
       .max(15, "Max legnth is 15")
       .required("required"),
-    email: Yup.string().email("invalid email:mail@mail.com ").required("required"),
+    email: Yup.string()
+      .email("invalid email:mail@mail.com ")
+      .required("required"),
     password: Yup.string()
-      .matches(new RegExp("^[A-Z][a-z0-9]{6,8}$"), "Invalid, password must be starting with capital letter, numbers & with Max.= 8")
+      .matches(
+        new RegExp("^[A-Z][a-z0-9]{6,8}$"),
+        "Invalid, password must be starting with capital letter, numbers & with Max.= 8"
+      )
       .required("required"),
     rePassword: Yup.string()
       .oneOf([Yup.ref("password")], "repassword must match the password")
@@ -32,7 +37,7 @@ export default function Register() {
   });
 
   const initialValues = {
-    name: "Ghada",
+    name: "",
     email: "",
     password: "",
     rePassword: "",
@@ -68,7 +73,7 @@ export default function Register() {
     <>
       <form
         onSubmit={registerForm.handleSubmit}
-        className="w-1/2 mx-auto my-20"
+        className="w-72 md:w-1/2 mx-auto my-20"
       >
         <div>
           {apiError ? (
@@ -83,14 +88,14 @@ export default function Register() {
           )}
         </div>
 
-        <h1 className="py-6 text-3xl text-textMain">Register Now : </h1>
+        <h1 className=" py-6 text-3xl text-textMain">Register Now : </h1>
         <div className="relative w-full mb-5 group">
           <input
             type="text"
             name="name"
             id="name"
+            placeholder="  "
             className="block p-2.5 px-2 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-main focus:outline-none focus:ring-0 focus:border-main peer"
-            placeholder=" "
             value={registerForm.values.name}
             onChange={registerForm.handleChange}
             onBlur={registerForm.handleBlur}

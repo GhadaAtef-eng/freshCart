@@ -65,7 +65,7 @@ export default function Login() {
 
   return (
     <>
-      <form onSubmit={loginForm.handleSubmit} className="w-1/2 mx-auto my-20">
+      <form onSubmit={loginForm.handleSubmit} className="w-72 md:w-1/2 mx-auto my-20">
         <div>
           {apiError ? (
             <div

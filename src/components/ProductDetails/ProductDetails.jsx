@@ -12,7 +12,7 @@ import { toast } from "react-toastify";
 export default function ProductDetails() {
   let { id, categoryId } = useParams();
 
-  let { addToCart , addToWishList } = useContext(cartContext);
+  let { addToCart , addToWishList, getWish } = useContext(cartContext);
 
   const settings = {
     dots: true,
@@ -83,8 +83,8 @@ export default function ProductDetails() {
             <div className="flex justify-between">
               <p>{details?.price} EGP</p>
               <p>
-                <span className="px-1">
-                <button onClick={() =>{ wishItem(details.id), className='text-red-800'}} >
+                <span className="px-1 text-red-800">
+                <button onClick={() =>{ wishItem(details.id)}} >
                     <i class="fa-solid fa-heart px-2"></i>
                   </button>
                   <i class="fa-solid fa-star rating-color "></i>
@@ -105,7 +105,7 @@ export default function ProductDetails() {
         </div>
       )}
       {!details && <Loader />}
-      <RelatedProduct categoryId={categoryId} id={id} />
+      {/* <RelatedProduct categoryId={categoryId} id={id} /> */}
     </>
   );
 }

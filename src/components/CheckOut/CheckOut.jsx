@@ -59,7 +59,7 @@ export default function CheckOut() {
     <>
       <form
         onSubmit={shippingForm.handleSubmit}
-        className="w-1/2 mx-auto py-28"
+        className="w-72 md:w-1/2 mx-auto py-28"
       >
         <div>
           {apiError ? (

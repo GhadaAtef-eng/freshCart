@@ -9,12 +9,14 @@ export default function Footer() {
     <>
       <footer className="bg-background w-full p-6 dark:bg-gray-900 dark:text-white dark:border-gray-800 border-t-2">
         <div className="container">
-          <h2 className="text-textMain text-3xl dark:text-gray-300">Get the FreshCart App</h2>
+          <h2 className="text-textMain text-3xl dark:text-gray-300">
+            Get the FreshCart App
+          </h2>
           <p className="text-[#828A90] py-4">
             {" "}
             We will send you a link, open it on your phone to download the app
           </p>
-          <div className="flex mb-5">
+          <div className="flex flex-col md:flex-row gap-3 mb-5">
             <input
               type="email"
               id="email"
@@ -34,6 +36,40 @@ export default function Footer() {
             <div className="app">
               <p> Git deliveries with FreshCart</p>
             </div>
+          </div>
+          <div className="flex  items-center gap-3 mt-4">
+            <ul className="flex gap-4">
+              <li>
+                <a href="#">
+                  <i class="fa-brands fa-instagram text-pink-400"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa-brands fa-facebook text-blue-700"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa-brands fa-tiktok text-cyan-500"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa-brands fa-twitter text-blue-600"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa-brands fa-linkedin text-blue-700"></i>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa-brands fa-youtube text-red-600"></i>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </footer>

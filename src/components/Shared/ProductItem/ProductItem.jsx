@@ -9,7 +9,7 @@ export default function ProductItem(props) {
 
   return (
     <>
-      <div className="lg:w-1/4 p-3 w-2/4 mb-3 hover:shadow-lg hover:shadow-main hover:duration-1000">
+      <div className="lg:w-1/4 p-3 w-2/4 mb-3 hover:shadow-lg hover:shadow-main hover:duration-1000 ">
         <div className="product">
           <Link to={`/productDetails/${id}/${category._id}`}>
             <img src={imageCover} alt="" />
@@ -25,6 +25,7 @@ export default function ProductItem(props) {
                 <button
                   onClick={() => {
                     props.wishItem(id);
+                    className='text-red-800'
                   }}
                 >
                   <i class="fa-solid fa-heart px-2"></i>
@@ -38,7 +39,7 @@ export default function ProductItem(props) {
             onClick={() => {
               props.addProductToCart(id);
             }}
-            className="btn bg-main text-center rounded-lg text-white p-2 w-full my-2"
+            className=" btn bg-main text-center rounded-lg text-white p-2 w-full my-2"
           >
             + Add to cart
           </button>
@@ -47,3 +48,6 @@ export default function ProductItem(props) {
     </>
   );
 }
+
+
+// md:hover:translate-y-full md:opacity-0 md:hover:transition-all md:hover:opacity-100 sm:opacity-100
